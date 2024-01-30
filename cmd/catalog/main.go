@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	db, e := sql.Open("mysql", "root:root@tcp(localhost:3306)/imercao17")
+	db, e := sql.Open("mysql", "root:root@tcp(localhost:3306)/imersao17")
 	if e != nil {
 		panic(e.Error())
 	}
