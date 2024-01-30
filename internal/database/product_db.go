@@ -57,7 +57,7 @@ func (pd *ProductDB) GetProduct(id string) (*entity.Product, error) {
 	return &response, nil
 }
 
-func (pd *ProductDB) GetProductByCategoryID(categoryID string) ([]*entity.Product, error) {
+func (pd *ProductDB) GetProductsByCategoryID(categoryID string) ([]*entity.Product, error) {
 	rows, e := pd.db.Query("SELECT id, name, description, category_id, price, image_url FROM products WHERE category_id = ?", categoryID)
 
 	if e != nil {
