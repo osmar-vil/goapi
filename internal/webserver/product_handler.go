@@ -25,7 +25,7 @@ func (wph *WebProductHandler) CreateProduct(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	_, e = wph.service.CreateProduct(
+	result, e := wph.service.CreateProduct(
 		product.Name,
 		product.Description,
 		product.ImageURL,
@@ -37,7 +37,7 @@ func (wph *WebProductHandler) CreateProduct(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	json.NewEncoder(w).Encode(product)
+	json.NewEncoder(w).Encode(result)
 }
 
 func (wph *WebProductHandler) GetProducts(w http.ResponseWriter, r *http.Request) {
