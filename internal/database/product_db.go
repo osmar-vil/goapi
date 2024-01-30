@@ -20,7 +20,7 @@ func (pd *ProductDB) CreateProduct(product *entity.Product) (*entity.Product, er
 		return nil, categoryErr
 	}
 
-	_, err := pd.db.Exec("INSERT INTO products (id, name, description, category_id, price, image_url), (?,?,?,?,?,?)",
+	_, err := pd.db.Exec("INSERT INTO products (id, name, description, category_id, price, image_url) VALUES (?,?,?,?,?,?)",
 		&product.ID, &product.Name, &product.Description, &product.CategoryID, &product.Price, &product.ImageURL)
 	if err != nil {
 		return nil, err
